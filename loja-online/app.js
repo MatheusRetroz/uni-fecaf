@@ -10,3 +10,12 @@ function calcularTotal (itens) {
 
     return total
 }
+function calcularDesconto (itens) {
+    let total = calcularTotal(itens)
+    total -= total * 0.25
+
+    // Aplica desconto de fidelidade
+    // antes de retornar o valor final
+    
+    return total
+}
