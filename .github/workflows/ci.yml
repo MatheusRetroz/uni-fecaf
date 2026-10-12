@@ -1,0 +1,21 @@
+name: CI - Loja Online
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'loja-online/**'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'loja-online/**'
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar dependências
+        run: cd loja-online && npm install
+      - name: Rodar os testes
+        run: cd loja-online && npm test
